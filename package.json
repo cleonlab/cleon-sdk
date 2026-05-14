@@ -1,0 +1,90 @@
+{
+  "name": "@cleonlab/sdk",
+  "version": "0.1.0",
+  "description": "Official TypeScript SDK for the Cleon Protocol — typed bindings for personas, skills, compositions, and on-chain registries on Base.",
+  "license": "MIT",
+  "author": "Cleon Lab <hello@cleonlab.com>",
+  "homepage": "https://github.com/cleonlab/cleon-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleonlab/cleon-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cleonlab/cleon-sdk/issues"
+  },
+  "keywords": [
+    "cleon",
+    "cleon-protocol",
+    "ai-agents",
+    "personas",
+    "skills",
+    "base",
+    "ethereum",
+    "web3",
+    "sdk"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./schemas": {
+      "types": "./dist/schemas/index.d.ts",
+      "import": "./dist/schemas/index.js",
+      "require": "./dist/schemas/index.cjs"
+    },
+    "./hashing": {
+      "types": "./dist/hashing/index.d.ts",
+      "import": "./dist/hashing/index.js",
+      "require": "./dist/hashing/index.cjs"
+    },
+    "./contracts": {
+      "types": "./dist/contracts/index.d.ts",
+      "import": "./dist/contracts/index.js",
+      "require": "./dist/contracts/index.cjs"
+    },
+    "./signatures": {
+      "types": "./dist/signatures/index.d.ts",
+      "import": "./dist/signatures/index.js",
+      "require": "./dist/signatures/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src test",
+    "format": "biome format --write src test",
+    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
+  },
+  "dependencies": {
+    "@noble/hashes": "^1.5.0",
+    "viem": "^2.21.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "cleon/skill/v1",
+  "id": "web-search",
+  "version": "1.0.0",
+  "category": "research",
+  "interface": {
+    "input": {
+      "type": "object",
+      "properties": {
+        "query": { "type": "string", "minLength": 1 },
+        "limit": { "type": "integer", "minimum": 1, "maximum": 20 }
+      },
+      "required": ["query"],
+      "additionalProperties": false
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "url": { "type": "string", "format": "uri" },
+              "snippet": { "type": "string" }
+            },
+            "required": ["title", "url"]
+          }
+        }
+      },
+      "required": ["results"]
+    },
+    "errors": [
+      { "code": "RATE_LIMITED", "description": "Search provider rate limit exceeded" },
+      { "code": "PROVIDER_DOWN", "description": "Upstream provider is unavailable" }
+    ]
+  },
+  "permissions": {
+    "scopes": ["external_api"],
+    "risk_class": 1
+  },
+  "execution": {
+    "endpoint_pattern": "https://agent.cleonlab.com/skills/web-search",
+    "max_latency_ms": 5000,
+    "deterministic": false
+  },
+  "metadata": {
+    "publisher": "0xabcdef0123456789abcdef0123456789abcdef01",
+    "published_at": 1714521600
+  }
+}
