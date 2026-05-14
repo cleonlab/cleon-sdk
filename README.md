@@ -4,9 +4,6 @@
 
 [**Whitepaper**](https://cleonlab.com/whitepaper.pdf) · [**Docs**](https://docs.cleonlab.com) · [**Try the agent**](https://agent.cleonlab.com) · [**GitHub**](https://github.com/cleonlab) · [**Telegram**](https://t.me/cleonlab) · [**X**](https://x.com/cleonlab)
 
-[![npm version](https://img.shields.io/npm/v/@cleonlab/sdk.svg)](https://www.npmjs.com/package/@cleonlab/sdk)
-[![CI](https://github.com/cleonlab/cleon-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/cleonlab/cleon-sdk/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 The Cleon Protocol specifies an open, content-addressed substrate for autonomous AI agents. This SDK gives you everything you need to validate, hash, sign, and read/write the on-chain primitives defined in the protocol whitepaper (v1.0):
 
@@ -353,16 +350,7 @@ src/
 
 CI runs typecheck, lint, tests, and build on Node 18/20/22 (see `.github/workflows/ci.yml`).
 
----
 
-## Related repositories
-
-- **[cleon-runtime](https://github.com/cleonlab/cleon-runtime)** — reference Cloud Mode runtime
-- **[cleon-skill-kit](https://github.com/cleonlab/cleon-skill-kit)** — CLI for publishing skills
-- **[cleon-persona-studio](https://github.com/cleonlab/cleon-persona-studio)** — browser-based persona authoring tool
-- **[cleon-skills](https://github.com/cleonlab/cleon-skills)** — reference skill collection
-
----
 
 ## License
 
